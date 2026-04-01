@@ -1,0 +1,152 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyBroadExceptionInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="allure-pytest" />
+          <option value="allure-python-commons" />
+          <option value="astroid" />
+          <option value="async-generator" />
+          <option value="attrs" />
+          <option value="beautifulsoup4" />
+          <option value="cachetools" />
+          <option value="certifi" />
+          <option value="cffi" />
+          <option value="cfgv" />
+          <option value="charset-normalizer" />
+          <option value="click" />
+          <option value="configparser" />
+          <option value="coverage" />
+          <option value="cryptography" />
+          <option value="curlify" />
+          <option value="deprecation" />
+          <option value="dill" />
+          <option value="distlib" />
+          <option value="exceptiongroup" />
+          <option value="execnet" />
+          <option value="expiringdict" />
+          <option value="Faker" />
+          <option value="filelock" />
+          <option value="future" />
+          <option value="google-api-core" />
+          <option value="google-api-python-client" />
+          <option value="google-auth" />
+          <option value="google-auth-httplib2" />
+          <option value="google-auth-oauthlib" />
+          <option value="googleapis-common-protos" />
+          <option value="h11" />
+          <option value="httplib2" />
+          <option value="identify" />
+          <option value="idna" />
+          <option value="img2pdf" />
+          <option value="iniconfig" />
+          <option value="isort" />
+          <option value="junit-xml" />
+          <option value="lazy-object-proxy" />
+          <option value="lxml" />
+          <option value="mccabe" />
+          <option value="nodeenv" />
+          <option value="numpy" />
+          <option value="oauthlib" />
+          <option value="opencv-contrib-python" />
+          <option value="opencv-python" />
+          <option value="outcome" />
+          <option value="packaging" />
+          <option value="pandas" />
+          <option value="parameterized" />
+          <option value="pdf2image" />
+          <option value="pikepdf" />
+          <option value="Pillow" />
+          <option value="platformdirs" />
+          <option value="pluggy" />
+          <option value="pre-commit" />
+          <option value="protobuf" />
+          <option value="pyasn1" />
+          <option value="pyasn1-modules" />
+          <option value="pychrome" />
+          <option value="pycparser" />
+          <option value="pylint" />
+          <option value="PyMySQL" />
+          <option value="pyOpenSSL" />
+          <option value="pyotp" />
+          <option value="pyparsing" />
+          <option value="PySocks" />
+          <option value="pytest" />
+          <option value="pytest-check" />
+          <option value="pytest-cov" />
+          <option value="pytest-forked" />
+          <option value="pytest-html" />
+          <option value="pytest-json-report" />
+          <option value="pytest-logger" />
+          <option value="pytest-metadata" />
+          <option value="pytest-ordering" />
+          <option value="pytest-rerunfailures" />
+          <option value="pytest-xdist" />
+          <option value="python-dateutil" />
+          <option value="python-dotenv" />
+          <option value="pytz" />
+          <option value="pyvin" />
+          <option value="PyYAML" />
+          <option value="requests" />
+          <option value="requests-oauthlib" />
+          <option value="rsa" />
+          <option value="selenium" />
+          <option value="setuptools-scm" />
+          <option value="six" />
+          <option value="sniffio" />
+          <option value="sortedcontainers" />
+          <option value="soupsieve" />
+          <option value="text-unidecode" />
+          <option value="toml" />
+          <option value="tomli" />
+          <option value="tomlkit" />
+          <option value="tqdm" />
+          <option value="trio" />
+          <option value="trio-websocket" />
+          <option value="typing_extensions" />
+          <option value="uritemplate" />
+          <option value="urllib3" />
+          <option value="virtualenv" />
+          <option value="webdriver-manager" />
+          <option value="websocket-client" />
+          <option value="wrapt" />
+          <option value="wsproto" />
+          <option value="pypdf" />
+          <option value="openpyxl" />
+          <option value="PyPasser" />
+          <option value="retry2" />
+          <option value="websockets" />
+          <option value="pytest-parallel" />
+          <option value="pdfplumber" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E501" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N806" />
+          <option value="N801" />
+          <option value="N802" />
+          <option value="N803" />
+          <option value="N812" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="object.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

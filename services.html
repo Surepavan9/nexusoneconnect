@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Our comprehensive IT asset and identity management services">
+    <title>Services - Nexusone</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #0066CC 0%, #00A8E8 100%);
+            color: white;
+            padding: 150px 0 80px;
+            margin-top: 70px;
+            text-align: center;
+        }
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .service-detail {
+            padding: 80px 0;
+        }
+        .service-detail:nth-child(even) {
+            background: var(--bg-light);
+        }
+        .service-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .service-icon-large {
+            font-size: 5rem;
+            color: var(--primary-color);
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .service-text h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+        .service-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        @media (max-width: 768px) {
+            .service-content {
+                grid-template-columns: 1fr;
+            }
+            .page-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html">Nexusone</a>
+                </div>
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#" class="btn-primary" id="inquiryBtn">Get Started</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Comprehensive IT asset and identity management solutions</p>
+        </div>
+    </section>
+
+    <!-- Onboarding Service -->
+    <section class="service-detail" id="onboarding">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-icon-large">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <div class="service-text">
+                    <h2>Onboarding</h2>
+                    <p>We provide a secure and streamlined onboarding process that prepares employee identities, system access, and devices from day one. New hires receive instant access to the tools they need through a single secure login, enabling them to start work without delays.</p>
+                    <p>Our platform automatically assigns the right applications, permissions, and device configurations based on each employee's role while protecting access with multi-factor authentication and identity management controls.</p>
+                    <p>This efficient workflow strengthens security, reduces IT workload, and ensures smooth onboarding experience for every new employee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offboarding Service -->
+    <section class="service-detail" id="offboarding">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-icon-large">
+                    <i class="fas fa-user-minus"></i>
+                </div>
+                <div class="service-text">
+                    <h2>Offboarding</h2>
+                    <p>We manage employee offboarding through a secure and structured process that immediately disables all system access on the employee's final working day. All user accounts, applications, and permissions are promptly revoked to protect company data and prevent unauthorized access.</p>
+                    <p>Company devices are securely collected, recorded, and tracked through a controlled asset management process. Each device then undergoes a data wiping procedure before being redeployed or reassigned.</p>
+                    <p>This streamlined workflow protects sensitive information, maintains operational transparency, and ensures a secure transition for both HR and IT teams.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Device Management Service -->
+    <section class="service-detail" id="device-management">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-icon-large">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <div class="service-text">
+                    <h2>Device Management</h2>
+                    <p>We provide comprehensive device management to ensure all company devices are securely configured, tracked, and maintained throughout their lifecycle.</p>
+                    <p>Each device is properly registered, assigned to employees, and monitored through a centralized management system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warehouse Management Service -->
+    <section class="service-detail" id="warehouse">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-icon-large">
+                    <i class="fas fa-warehouse"></i>
+                </div>
+                <div class="service-text">
+                    <h2>Warehouse & Inventory Management</h2>
+                    <p>We provide secure warehouse and inventory management to ensure company devices are properly stored, tracked, and maintained within a controlled environment.</p>
+                    <p>Each device is logged, labeled, and inspected for condition and quality before being stored, redeployed, or shipped. Our centralized inventory system provides clear visibility into asset location, availability, and status always.</p>
+                    <p>This structured process ensures secure storage, organized asset tracking, and efficient access to inventory when devices are required.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secure Data Wiping Service -->
+    <section class="service-detail" id="data-wiping">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-icon-large">
+                    <i class="fas fa-eraser"></i>
+                </div>
+                <div class="service-text">
+                    <h2>Secure Data Wiping</h2>
+                    <p>We provide advanced secure data wiping services to ensure all sensitive client data is permanently removed from company devices before reuse, redeployment, or disposal.</p>
+                    <p>Our process follows certified industry data erasure standards to eliminate any possibility of data recovery. Each device undergoes a controlled wiping procedure with verification and detailed reporting to confirm complete data removal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audit Logs Service -->
+    <section class="service-detail" id="audit-logs">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-icon-large">
+                    <i class="fas fa-clipboard-list"></i>
+                </div>
+                <div class="service-text">
+                    <h2>Audit Logs</h2>
+                    <p>We maintain comprehensive audit logs to record and monitor all system activities, user access, and administrative actions across the platform.</p>
+                    <p>Every login, access change, device activity, and system update is securely tracked to ensure full visibility and accountability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Get Started?</h2>
+                <p>Contact us today to learn how our services can transform your IT operations</p>
+                <a href="#" class="btn-primary btn-large" id="ctaInquiryBtn">Request a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Nexusone</h3>
+                    <p>Complete IT asset and identity management from day one to day done.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/ragava538_/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/nexusone" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/nexusone" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/nexusone" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/@nexusone" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#onboarding">Onboarding</a></li>
+                        <li><a href="services.html#offboarding">Offboarding</a></li>
+                        <li><a href="services.html#device-management">Device Management</a></li>
+                        <li><a href="services.html#warehouse">Warehouse Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> info@nexusoneconnect.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> San Francisco, CA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nexusone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inquiry Popup Modal -->
+    <div class="modal" id="inquiryModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h2>Get Started Today</h2>
+            <p>Fill out the form below and our team will get back to you within 24 hours.</p>
+            <form class="inquiry-form" id="inquiryForm">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Full Name *" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email Address *" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Phone Number">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="company" placeholder="Company Name">
+                </div>
+                <div class="form-group">
+                    <select name="service" required>
+                        <option value="">Select Service *</option>
+                        <option value="onboarding">Onboarding</option>
+                        <option value="offboarding">Offboarding</option>
+                        <option value="device-management">Device Management</option>
+                        <option value="warehouse">Warehouse Management</option>
+                        <option value="data-wiping">Secure Data Wiping</option>
+                        <option value="general">General Inquiry</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="4" placeholder="Your Message *" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-large">Submit Inquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
