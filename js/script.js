@@ -77,57 +77,92 @@ window.addEventListener('click', (e) => {
     }
 });
 
-// Form Submission
+// Form Submission - Integrated with Google Forms
 const inquiryForm = document.getElementById('inquiryForm');
 if (inquiryForm) {
     inquiryForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        // Get form data
-        const formData = new FormData(inquiryForm);
-        const data = Object.fromEntries(formData);
+        // Google Apps Script Web App URL
+        const scriptUrl = 'https://script.google.com/macros/s/AKfycbytodlmlL504ytuq9wwmfaDyCSTZ6ETwBoLSIXQkBfXcPaOslIuQmNFwiLpYdGrgk2Uuw/exec';
 
-        // Here you would normally send the data to a server
-        // For now, we'll just show a success message
-        alert('Thank you for your inquiry! We will get back to you within 24 hours.');
+        // Get form values as JSON object
+        const formData = {
+            name: inquiryForm.querySelector('[name="name"]').value,
+            email: inquiryForm.querySelector('[name="email"]').value,
+            phone: inquiryForm.querySelector('[name="phone"]').value,
+            company: inquiryForm.querySelector('[name="company"]').value,
+            website: inquiryForm.querySelector('[name="website"]').value,
+            service: inquiryForm.querySelector('[name="service"]').value,
+            message: inquiryForm.querySelector('[name="message"]').value
+        };
 
-        // Reset form and close modal
-        inquiryForm.reset();
-        closeModalFunc();
+        // Submit to Google Apps Script
+        fetch(scriptUrl, {
+            method: 'POST',
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                // Show success message
+                alert('Thank you for your inquiry! We will get back to you within 24 hours.');
 
-        // In production, you would use a service like Formspree or Web3Forms
-        // Example with Formspree:
-        // fetch('https://formspree.io/f/YOUR_FORM_ID', {
-        //     method: 'POST',
-        //     body: formData,
-        //     headers: {
-        //         'Accept': 'application/json'
-        //     }
-        // }).then(response => {
-        //     if (response.ok) {
-        //         alert('Thank you for your inquiry!');
-        //         inquiryForm.reset();
-        //         closeModalFunc();
-        //     }
-        // });
+                // Reset form and close modal
+                inquiryForm.reset();
+                closeModalFunc();
+            } else {
+                alert('There was an error submitting your form. Please try again or contact us directly.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error submitting your form. Please try again or contact us directly.');
+        });
     });
 }
 
-// Contact Page Form Submission
+// Contact Page Form Submission - Integrated with Google Forms
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        // Get form data
-        const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData);
+        // Google Apps Script Web App URL
+        const scriptUrl = 'https://script.google.com/macros/s/AKfycbytodlmlL504ytuq9wwmfaDyCSTZ6ETwBoLSIXQkBfXcPaOslIuQmNFwiLpYdGrgk2Uuw/exec';
 
-        // Show success message
-        alert('Thank you for contacting us! We will get back to you within 24 hours.');
+        // Get form values as JSON object
+        const formData = {
+            name: contactForm.querySelector('[name="name"]').value,
+            email: contactForm.querySelector('[name="email"]').value,
+            phone: contactForm.querySelector('[name="phone"]').value,
+            company: contactForm.querySelector('[name="company"]').value,
+            website: contactForm.querySelector('[name="website"]').value,
+            service: contactForm.querySelector('[name="service"]').value,
+            message: contactForm.querySelector('[name="message"]').value
+        };
 
-        // Reset form
-        contactForm.reset();
+        // Submit to Google Apps Script
+        fetch(scriptUrl, {
+            method: 'POST',
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                // Show success message
+                alert('Thank you for contacting us! We will get back to you within 24 hours.');
+
+                // Reset form
+                contactForm.reset();
+            } else {
+                alert('There was an error submitting your form. Please try again or contact us directly.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error submitting your form. Please try again or contact us directly.');
+        });
     });
 }
 
@@ -165,5 +200,14 @@ document.querySelectorAll('.feature-card, .service-card, .benefit-card').forEach
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
+});
+
+// Update copyright year dynamically
+document.addEventListener('DOMContentLoaded', () => {
+    const currentYear = new Date().getFullYear();
+    const copyrightElements = document.querySelectorAll('.footer-bottom p');
+    copyrightElements.forEach(el => {
+        el.innerHTML = `&copy; ${currentYear} Nexusone Connect. All rights reserved.`;
+    });
 });
 
