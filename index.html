@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="spinner"></div>
+    </div>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container">
@@ -60,30 +64,30 @@
                 <p>Unified IT asset and identity management platform that tracks hardware, software, and licenses in real time</p>
             </div>
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card scroll-reveal">
                     <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
+                        <i class="fas fa-clock float"></i>
                     </div>
                     <h3>Real-Time Tracking</h3>
                     <p>Maintain real-time hardware, software, and licenses with accurate visibility and proper allocation across your organization.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card scroll-reveal">
                     <div class="feature-icon">
-                        <i class="fas fa-sync-alt"></i>
+                        <i class="fas fa-sync-alt float"></i>
                     </div>
                     <h3>Complete Lifecycle</h3>
                     <p>Track assets from procurement to retirement with full visibility, accountability, and control at every stage.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card scroll-reveal">
                     <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-shield-alt float"></i>
                     </div>
                     <h3>Reduce Risks</h3>
                     <p>Reduce asset loss, prevent duplication, and minimize compliance risks with accurate records and controlled access.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card scroll-reveal">
                     <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-chart-line float"></i>
                     </div>
                     <h3>Better Visibility</h3>
                     <p>Improve IT visibility across departments and locations with centralized, real-time insights into assets and users.</p>
@@ -100,7 +104,7 @@
                 <p>Comprehensive solutions for your IT asset and identity management needs</p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card scroll-reveal">
                     <div class="service-icon">
                         <i class="fas fa-user-plus"></i>
                     </div>
@@ -108,7 +112,7 @@
                     <p>Secure and streamlined onboarding that prepares employee identities, system access, and devices from day one.</p>
                     <a href="services.html#onboarding" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card">
+                <div class="service-card scroll-reveal">
                     <div class="service-icon">
                         <i class="fas fa-user-minus"></i>
                     </div>
@@ -116,7 +120,7 @@
                     <p>Secure employee offboarding that immediately disables all system access and manages device recovery.</p>
                     <a href="services.html#offboarding" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card">
+                <div class="service-card scroll-reveal">
                     <div class="service-icon">
                         <i class="fas fa-laptop"></i>
                     </div>
@@ -124,7 +128,7 @@
                     <p>Comprehensive device management ensuring all company devices are securely configured and tracked.</p>
                     <a href="services.html#device-management" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card">
+                <div class="service-card scroll-reveal">
                     <div class="service-icon">
                         <i class="fas fa-warehouse"></i>
                     </div>
@@ -132,7 +136,7 @@
                     <p>Secure warehouse and inventory management ensuring devices are properly stored, tracked, and maintained.</p>
                     <a href="services.html#warehouse" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card">
+                <div class="service-card scroll-reveal">
                     <div class="service-icon">
                         <i class="fas fa-eraser"></i>
                     </div>
@@ -140,13 +144,41 @@
                     <p>Advanced secure data wiping services following certified industry standards for complete data removal.</p>
                     <a href="services.html#data-wiping" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card">
+                <div class="service-card scroll-reveal">
                     <div class="service-icon">
                         <i class="fas fa-clipboard-list"></i>
                     </div>
                     <h3>Audit Logs</h3>
                     <p>Comprehensive audit logs recording all system activities, user access, and administrative actions.</p>
                     <a href="services.html#audit-logs" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Counter Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="scroll-reveal">Our Impact in Numbers</h2>
+                <p class="scroll-reveal">Trusted by organizations worldwide for seamless IT asset management</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card scroll-reveal">
+                    <span class="counter" data-target="500">0</span><span style="font-size: 3.5rem; font-weight: 700;">+</span>
+                    <p class="stat-label">Devices Managed</p>
+                </div>
+                <div class="stat-card scroll-reveal">
+                    <span class="counter" data-target="1000">0</span><span style="font-size: 3.5rem; font-weight: 700;">+</span>
+                    <p class="stat-label">Employees Onboarded</p>
+                </div>
+                <div class="stat-card scroll-reveal">
+                    <span class="counter" data-target="99">0</span><span style="font-size: 3.5rem; font-weight: 700;">%</span>
+                    <p class="stat-label">Customer Satisfaction</p>
+                </div>
+                <div class="stat-card scroll-reveal">
+                    <span class="counter" data-target="24">0</span><span style="font-size: 3.5rem; font-weight: 700;">/7</span>
+                    <p class="stat-label">Support Available</p>
                 </div>
             </div>
         </div>
@@ -253,6 +285,7 @@
         </div>
     </div>
 
+    <script src="js/animations.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
