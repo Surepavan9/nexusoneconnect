@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .page-header {
-            background: linear-gradient(135deg, #0066CC 0%, #00A8E8 100%);
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-mid) 100%);
             color: white;
             padding: 150px 0 80px;
             margin-top: 70px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         .page-header h1 {
             font-size: 3rem;
@@ -62,6 +64,11 @@
     </style>
 </head>
 <body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="spinner"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container">
@@ -89,19 +96,19 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Our Services</h1>
-            <p>Comprehensive IT asset and identity management solutions</p>
+            <h1 class="fade-in">Our Services</h1>
+            <p class="fade-in-delay">Comprehensive IT asset and identity management solutions</p>
         </div>
     </section>
 
     <!-- Onboarding Service -->
     <section class="service-detail" id="onboarding">
         <div class="container">
-            <div class="service-content">
-                <div class="service-icon-large">
-                    <i class="fas fa-user-plus"></i>
+            <div class="service-content scroll-reveal">
+                <div class="service-icon-large scroll-reveal-left">
+                    <i class="fas fa-user-plus float"></i>
                 </div>
-                <div class="service-text">
+                <div class="service-text scroll-reveal-right">
                     <h2>Onboarding</h2>
                     <p>We provide a secure and streamlined onboarding process that prepares employee identities, system access, and devices from day one. New hires receive instant access to the tools they need through a single secure login, enabling them to start work without delays.</p>
                     <p>Our platform automatically assigns the right applications, permissions, and device configurations based on each employee's role while protecting access with multi-factor authentication and identity management controls.</p>
@@ -294,6 +301,7 @@
         </div>
     </div>
 
+    <script src="js/animations.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

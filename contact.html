@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .page-header {
-            background: linear-gradient(135deg, #0066CC 0%, #00A8E8 100%);
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-mid) 100%);
             color: white;
             padding: 150px 0 80px;
             margin-top: 70px;
@@ -75,6 +75,11 @@
     </style>
 </head>
 <body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="spinner"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container">
@@ -102,8 +107,8 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Contact Us</h1>
-            <p>Get in touch with our team - we're here to help</p>
+            <h1 class="fade-in">Contact Us</h1>
+            <p class="fade-in-delay">Get in touch with our team - we're here to help</p>
         </div>
     </section>
 
@@ -112,7 +117,7 @@
         <div class="container">
             <div class="contact-grid">
                 <!-- Contact Information -->
-                <div>
+                <div class="scroll-reveal-left">
                     <div class="contact-info-box">
                         <h3>Get In Touch</h3>
                         <div class="contact-detail">
@@ -283,6 +288,7 @@
         </div>
     </div>
 
+    <script src="js/animations.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
