@@ -308,3 +308,127 @@ const addSectionBackgrounds = () => {
 };
 
 document.addEventListener('DOMContentLoaded', addSectionBackgrounds);
+
+
+// ========== ADD MORE FLOATING ELEMENTS TO SERVICES SECTION ==========
+const addFloatingElements = () => {
+    const coreServices = document.querySelector('.core-services');
+    if (!coreServices) return;
+
+    // Add floating teal orbs
+    for (let i = 0; i < 3; i++) {
+        const orb = document.createElement('div');
+        orb.className = 'floating-orb';
+        orb.style.cssText = `
+            position: absolute;
+            width: ${100 + Math.random() * 100}px;
+            height: ${100 + Math.random() * 100}px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.15), transparent);
+            border-radius: 50%;
+            top: ${Math.random() * 100}%;
+            left: ${Math.random() * 100}%;
+            filter: blur(30px);
+            animation: orbFloat ${15 + Math.random() * 10}s ease-in-out infinite;
+            animation-delay: ${Math.random() * 5}s;
+            pointer-events: none;
+            z-index: 0;
+        `;
+        coreServices.appendChild(orb);
+    }
+
+    // Add sparkles to What We Do section
+    const whatWeDo = document.querySelector('.what-we-do');
+    if (whatWeDo) {
+        for (let i = 0; i < 10; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.cssText = `
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                background: rgba(20, 184, 166, 0.8);
+                border-radius: 50%;
+                top: ${Math.random() * 100}%;
+                left: ${Math.random() * 100}%;
+                animation: sparkleAnimation ${2 + Math.random() * 3}s ease-in-out infinite;
+                animation-delay: ${Math.random() * 2}s;
+                pointer-events: none;
+                z-index: 0;
+            `;
+            whatWeDo.appendChild(sparkle);
+        }
+    }
+};
+
+// Sparkle animation
+const addSparkleAnimation = () => {
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes sparkleAnimation {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+    `;
+    document.head.appendChild(style);
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    addFloatingElements();
+    addSparkleAnimation();
+});
+
+// ========== ENHANCED CARD HOVER EFFECTS ==========
+const enhanceCardHovers = () => {
+    const cards = document.querySelectorAll('.feature-card, .service-card');
+
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            // Add ripple effect
+            const ripple = document.createElement('div');
+            ripple.style.cssText = `
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0;
+                height: 0;
+                border-radius: 50%;
+                background: radial-gradient(circle, rgba(20, 184, 166, 0.3), transparent);
+                transform: translate(-50%, -50%);
+                pointer-events: none;
+                animation: rippleEffect 0.6s ease-out;
+            `;
+
+            card.style.position = 'relative';
+            card.appendChild(ripple);
+
+            setTimeout(() => ripple.remove(), 600);
+        });
+    });
+
+    // Add ripple animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes rippleEffect {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 1;
+            }
+            100% {
+                width: 300px;
+                height: 300px;
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+};
+
+document.addEventListener('DOMContentLoaded', enhanceCardHovers);
+
