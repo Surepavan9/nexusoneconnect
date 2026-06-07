@@ -282,3 +282,29 @@ const createColoredParticles = (container, count) => {
 
 // Initialize enhanced hero on load
 document.addEventListener('DOMContentLoaded', enhanceHeroBackground);
+
+// ========== ADD ANIMATED BACKGROUNDS TO SECTIONS ==========
+const addSectionBackgrounds = () => {
+    // Add bubbles to What We Do section
+    const whatWeDo = document.querySelector('.what-we-do');
+    if (whatWeDo) {
+        const bubblesContainer = document.createElement('div');
+        bubblesContainer.className = 'bubbles-bg';
+        for (let i = 0; i < 5; i++) {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubblesContainer.appendChild(bubble);
+        }
+        whatWeDo.appendChild(bubblesContainer);
+    }
+
+    // Add dots to Core Services section
+    const coreServices = document.querySelector('.core-services');
+    if (coreServices) {
+        const dotsContainer = document.createElement('div');
+        dotsContainer.className = 'dots-bg';
+        coreServices.appendChild(dotsContainer);
+    }
+};
+
+document.addEventListener('DOMContentLoaded', addSectionBackgrounds);
