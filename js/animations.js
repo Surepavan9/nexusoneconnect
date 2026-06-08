@@ -109,21 +109,7 @@ const observeCounters = () => {
 document.addEventListener('DOMContentLoaded', observeCounters);
 
 // ========== SMOOTH SCROLL FOR ANCHOR LINKS ==========
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href !== '#' && href !== '#!') {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }
-    });
-});
+// Note: Smooth scrolling is handled in script.js to avoid conflicts with modal buttons
 
 // ========== PARTICLE BACKGROUND ==========
 const createParticles = (container, count = 50) => {

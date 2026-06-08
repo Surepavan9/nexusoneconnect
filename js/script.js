@@ -16,65 +16,77 @@ navLinks.forEach(link => {
     });
 });
 
-// Sticky Navbar
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
-    } else {
-        navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+// Modal Functionality - Wrapped in DOMContentLoaded to ensure elements exist
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('inquiryModal');
+    const inquiryBtn = document.getElementById('inquiryBtn');
+    const heroInquiryBtn = document.getElementById('heroInquiryBtn');
+    const ctaInquiryBtn = document.getElementById('ctaInquiryBtn');
+    const closeModal = document.getElementById('closeModal');
+
+    console.log('Modal elements check:');
+    console.log('modal:', modal);
+    console.log('inquiryBtn:', inquiryBtn);
+    console.log('heroInquiryBtn:', heroInquiryBtn);
+    console.log('ctaInquiryBtn:', ctaInquiryBtn);
+
+    // Open modal
+    function openModal() {
+        console.log('openModal function called');
+        if (modal) {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            console.log('Modal display set to block');
+        } else {
+            console.error('Modal element is null!');
+        }
     }
-});
 
-// Modal Functionality
-const modal = document.getElementById('inquiryModal');
-const inquiryBtn = document.getElementById('inquiryBtn');
-const heroInquiryBtn = document.getElementById('heroInquiryBtn');
-const ctaInquiryBtn = document.getElementById('ctaInquiryBtn');
-const closeModal = document.getElementById('closeModal');
-
-// Open modal
-function openModal() {
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-}
-
-// Close modal
-function closeModalFunc() {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-}
-
-if (inquiryBtn) {
-    inquiryBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        openModal();
-    });
-}
-
-if (heroInquiryBtn) {
-    heroInquiryBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        openModal();
-    });
-}
-
-if (ctaInquiryBtn) {
-    ctaInquiryBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        openModal();
-    });
-}
-
-if (closeModal) {
-    closeModal.addEventListener('click', closeModalFunc);
-}
-
-// Close modal when clicking outside
-window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        closeModalFunc();
+    // Close modal
+    function closeModalFunc() {
+        if (modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
     }
+
+    if (inquiryBtn) {
+        inquiryBtn.addEventListener('click', (e) => {
+            console.log('inquiryBtn clicked');
+            e.preventDefault();
+            e.stopPropagation();
+            openModal();
+        });
+    }
+
+    if (heroInquiryBtn) {
+        heroInquiryBtn.addEventListener('click', (e) => {
+            console.log('heroInquiryBtn clicked');
+            e.preventDefault();
+            e.stopPropagation();
+            openModal();
+        });
+    }
+
+    if (ctaInquiryBtn) {
+        ctaInquiryBtn.addEventListener('click', (e) => {
+            console.log('ctaInquiryBtn clicked');
+            e.preventDefault();
+            e.stopPropagation();
+            openModal();
+        });
+    }
+
+    if (closeModal) {
+        closeModal.addEventListener('click', closeModalFunc);
+    }
+
+    // Close modal when clicking outside
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModalFunc();
+        }
+    });
 });
 
 // Form Submission - Integrated with Google Forms
@@ -170,6 +182,10 @@ if (contactForm) {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
+        // Skip if this is a modal trigger button or has specific handler
+        if (this.id === 'heroInquiryBtn' || this.id === 'inquiryBtn' || this.id === 'ctaInquiryBtn') {
+            return;
+        }
         if (href !== '#' && document.querySelector(href)) {
             e.preventDefault();
             document.querySelector(href).scrollIntoView({
