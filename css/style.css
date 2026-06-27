@@ -8,15 +8,15 @@
 :root {
     --primary-color: #14B8A6;
     --primary-dark: #0F766E;
-    --secondary-color: #2C3E50;
+    --secondary-color: #0B2545;
     --accent-color: #06B6D4;
     --accent-light: #22D3EE;
     --gradient-start: #14B8A6;
     --gradient-mid: #06B6D4;
     --gradient-end: #22D3EE;
-    --text-dark: #2C3E50;
-    --text-light: #6C757D;
-    --bg-light: #F8F9FA;
+    --text-dark: #13293D;
+    --text-light: #5A6B7B;
+    --bg-light: #F6FAFB;
     --white: #FFFFFF;
     --success: #10B981;
     --transition: all 0.3s ease;
@@ -282,7 +282,7 @@ body {
 
 /* CTA Section */
 .cta-section {
-    background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+    background: linear-gradient(135deg, #0B2545 0%, #123A63 100%);
     color: var(--white);
     padding: 80px 0;
     text-align: center;
@@ -394,11 +394,13 @@ body {
     height: 100%;
     background: rgba(0,0,0,0.7);
     animation: fadeIn 0.3s ease;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .modal-content {
     background: var(--white);
-    margin: 5% auto;
+    margin: 40px auto;
     padding: 3rem;
     border-radius: 10px;
     max-width: 600px;
@@ -783,6 +785,7 @@ body {
         transform: translateX(-20px) scale(0.6);
         opacity: 0;
     }
+}
 
 
 /* ========== COLORFUL CARD ENHANCEMENTS ========== */
@@ -867,8 +870,6 @@ body {
     50% {
         transform: translate(-50%, -50%) scale(1.1);
     }
-}
-
 }
 
 /* Mesh Gradient Background */
@@ -1468,12 +1469,19 @@ html {
     padding: 20px;
 }
 
-.counter {
+.stat-number {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.counter,
+.counter-suffix {
     font-size: 3.5rem;
     font-weight: 700;
     color: white;
-    display: block;
-    margin-bottom: 10px;
+    line-height: 1;
 }
 
 .stat-label {
@@ -1524,6 +1532,50 @@ html {
     }
 }
 
+/* Scroll To Top Button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 20px rgba(20, 184, 166, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1500;
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(20, 184, 166, 0.55);
+}
+
+@media (max-width: 768px) {
+    .scroll-top-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+    }
+}
+
 /* Responsive Animations Disable for Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
     *,
@@ -1533,4 +1585,194 @@ html {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+/* ===== Feature / Highlight Lists (shared: Services & About) ===== */
+.feature-list {
+    list-style: none;
+    margin: 1.75rem 0 0.25rem;
+    padding: 0;
+    display: grid;
+    gap: 0.85rem;
+}
+
+.feature-list li {
+    position: relative;
+    padding-left: 2rem;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--text-light);
+}
+
+.feature-list li i {
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+    color: var(--primary-color);
+    font-size: 1.05rem;
+}
+
+.feature-list li strong {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+/* Stagger the feature-list items in as their parent reveals */
+.scroll-reveal.active .feature-list li {
+    animation: featureItemIn 0.5s ease both;
+}
+.scroll-reveal.active .feature-list li:nth-child(1) { animation-delay: 0.05s; }
+.scroll-reveal.active .feature-list li:nth-child(2) { animation-delay: 0.15s; }
+.scroll-reveal.active .feature-list li:nth-child(3) { animation-delay: 0.25s; }
+.scroll-reveal.active .feature-list li:nth-child(4) { animation-delay: 0.35s; }
+
+@keyframes featureItemIn {
+    from { opacity: 0; transform: translateX(-12px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+.feature-list li {
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+.feature-list li:hover {
+    transform: translateX(6px);
+    color: var(--text-dark);
+}
+.feature-list li i {
+    transition: transform 0.25s ease;
+}
+.feature-list li:hover i {
+    transform: scale(1.25);
+}
+
+/* ===================================================================
+   POLISH & MICRO-INTERACTIONS
+   (loaded after page-level inline <style>, so section.* overrides win;
+    the prefers-reduced-motion block above uses !important and still wins)
+   =================================================================== */
+
+/* Animated, slowly drifting gradient on every page header */
+section.page-header {
+    background: linear-gradient(135deg,
+        var(--gradient-start) 0%,
+        var(--gradient-mid) 50%,
+        var(--gradient-end) 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 14s ease infinite;
+}
+
+/* Shine sweep across primary buttons on hover */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -130%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transition: left 0.6s ease;
+    pointer-events: none;
+}
+.btn-primary:hover::before {
+    left: 130%;
+}
+
+/* Animated underline on nav links (excludes the Get Started button) */
+.nav-menu a:not(.btn-primary) {
+    position: relative;
+}
+.nav-menu a:not(.btn-primary)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    transition: width 0.3s ease;
+}
+.nav-menu a:not(.btn-primary):hover::after,
+.nav-menu a.active:not(.btn-primary)::after {
+    width: 100%;
+}
+
+/* Benefit cards (Why Choose Us): rising accent bar + lively icon */
+.benefit-card {
+    position: relative;
+    overflow: hidden;
+}
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.35s ease;
+}
+.benefit-card:hover::before {
+    transform: scaleY(1);
+}
+.benefit-card h3 i {
+    transition: transform 0.35s ease;
+}
+.benefit-card:hover h3 i {
+    transform: scale(1.2) rotate(-6deg);
+}
+
+/* Service icon tiles (Services page): lift + icon pop on hover */
+.service-icon-large {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.service-icon-large:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 18px 40px rgba(20, 184, 166, 0.25);
+}
+.service-icon-large i {
+    transition: transform 0.4s ease;
+}
+.service-icon-large:hover i {
+    transform: scale(1.12);
+}
+
+/* Certification cards (About): lift + icon tilt */
+.cert-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cert-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(20, 184, 166, 0.2);
+}
+.cert-card i {
+    transition: transform 0.4s ease;
+}
+.cert-card:hover i {
+    transform: scale(1.15) rotate(5deg);
+}
+
+/* Contact info boxes: gentle lift */
+.contact-info-box {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-info-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Social icons: scale + spin a touch on hover */
+.social-links a:hover {
+    transform: translateY(-3px) scale(1.12);
+}
+.social-links a i {
+    transition: transform 0.3s ease;
+}
+.social-links a:hover i {
+    transform: rotate(8deg);
 }

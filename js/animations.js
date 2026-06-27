@@ -418,3 +418,29 @@ const enhanceCardHovers = () => {
 
 document.addEventListener('DOMContentLoaded', enhanceCardHovers);
 
+// ========== SCROLL TO TOP BUTTON ==========
+const initScrollToTop = () => {
+    const btn = document.createElement('button');
+    btn.className = 'scroll-top-btn';
+    btn.setAttribute('aria-label', 'Scroll back to top');
+    btn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    document.body.appendChild(btn);
+
+    const toggleBtn = () => {
+        if (window.pageYOffset > 400) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    };
+
+    window.addEventListener('scroll', toggleBtn);
+    toggleBtn();
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+};
+
+document.addEventListener('DOMContentLoaded', initScrollToTop);
+

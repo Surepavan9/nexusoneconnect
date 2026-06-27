@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contact Nexusone for IT asset and identity management solutions">
-    <title>Contact Us - Nexusone</title>
+    <title>Contact Us - Nexusone Connect</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="theme-color" content="#14B8A6">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Nexusone Connect">
+    <meta property="og:title" content="Contact Us - Nexusone Connect">
+    <meta property="og:description" content="Get in touch with the Nexusone Connect team for IT asset and identity management solutions. We're here to help.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Us - Nexusone Connect">
+    <meta name="twitter:description" content="Get in touch with the Nexusone Connect team. We're here to help.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -87,7 +96,7 @@
                 <div class="logo">
                     <a href="index.html">Nexusone Connect</a>
                 </div>
-                <div class="nav-toggle" id="navToggle">
+                <div class="nav-toggle" id="navToggle" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -158,29 +167,38 @@
                 </div>
 
                 <!-- Contact Form -->
-                <div class="contact-form-box">
+                <div class="contact-form-box scroll-reveal-right">
                     <h2>Send Us a Message</h2>
                     <form class="inquiry-form" id="contactForm">
                         <div class="form-group">
-                            <input type="text" name="name" placeholder="Full Name *" required>
+                            <input type="text" name="name" placeholder="Full Name *" aria-label="Full name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Email Address *" required>
+                            <input type="email" name="email" placeholder="Email Address *" aria-label="Email address" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" name="phone" placeholder="Phone Number">
+                            <input type="tel" name="phone" placeholder="Phone Number" aria-label="Phone number">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="company" placeholder="Company Name">
+                            <input type="text" name="company" placeholder="Company Name" aria-label="Company name">
                         </div>
                         <div class="form-group">
-                            <input type="url" name="website" placeholder="Your Website URL (Optional)">
+                            <input type="url" name="website" placeholder="Your Website URL (Optional)" aria-label="Website URL">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="service" value="IT Support & Consulting" readonly required>
+                            <select name="service" required aria-label="Service of interest">
+                                <option value="">Select Service *</option>
+                                <option value="Onboarding">Onboarding</option>
+                                <option value="Offboarding">Offboarding</option>
+                                <option value="Device Management">Device Management</option>
+                                <option value="Warehouse &amp; Inventory Management">Warehouse &amp; Inventory Management</option>
+                                <option value="Secure Data Wiping">Secure Data Wiping</option>
+                                <option value="Audit Logs">Audit Logs</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <textarea name="message" rows="5" placeholder="Your Message *" required></textarea>
+                            <textarea name="message" rows="5" placeholder="Your Message *" aria-label="Your message" required></textarea>
                         </div>
                         <button type="submit" class="btn-primary btn-large">Send Message</button>
                     </form>
@@ -220,6 +238,8 @@
                         <li><a href="services.html#offboarding">Offboarding</a></li>
                         <li><a href="services.html#device-management">Device Management</a></li>
                         <li><a href="services.html#warehouse">Warehouse Management</a></li>
+                        <li><a href="services.html#data-wiping">Secure Data Wiping</a></li>
+                        <li><a href="services.html#audit-logs">Audit Logs</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -232,38 +252,47 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Nexusone Connect. All rights reserved.</p>
+                <p>&copy; 2026 Nexusone Connect. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Inquiry Popup Modal -->
-    <div class="modal" id="inquiryModal">
+    <div class="modal" id="inquiryModal" role="dialog" aria-modal="true" aria-labelledby="inquiryModalTitle">
         <div class="modal-content">
-            <span class="close-modal" id="closeModal">&times;</span>
-            <h2>Get Started Today</h2>
+            <span class="close-modal" id="closeModal" role="button" tabindex="0" aria-label="Close dialog">&times;</span>
+            <h2 id="inquiryModalTitle">Get Started Today</h2>
             <p>Fill out the form below and our team will get back to you within 24 hours.</p>
             <form class="inquiry-form" id="inquiryForm">
                 <div class="form-group">
-                    <input type="text" name="name" placeholder="Full Name *" required>
+                    <input type="text" name="name" placeholder="Full Name *" aria-label="Full name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" placeholder="Email Address *" required>
+                    <input type="email" name="email" placeholder="Email Address *" aria-label="Email address" required>
                 </div>
                 <div class="form-group">
-                    <input type="tel" name="phone" placeholder="Phone Number">
+                    <input type="tel" name="phone" placeholder="Phone Number" aria-label="Phone number">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="company" placeholder="Company Name">
+                    <input type="text" name="company" placeholder="Company Name" aria-label="Company name">
                 </div>
                 <div class="form-group">
-                    <input type="url" name="website" placeholder="Your Website URL (Optional)">
+                    <input type="url" name="website" placeholder="Your Website URL (Optional)" aria-label="Website URL">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="service" value="IT Support & Consulting" readonly required>
+                    <select name="service" required aria-label="Service of interest">
+                        <option value="">Select Service *</option>
+                        <option value="Onboarding">Onboarding</option>
+                        <option value="Offboarding">Offboarding</option>
+                        <option value="Device Management">Device Management</option>
+                        <option value="Warehouse &amp; Inventory Management">Warehouse &amp; Inventory Management</option>
+                        <option value="Secure Data Wiping">Secure Data Wiping</option>
+                        <option value="Audit Logs">Audit Logs</option>
+                        <option value="General Inquiry">General Inquiry</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <textarea name="message" rows="4" placeholder="Your Message *" required></textarea>
+                    <textarea name="message" rows="4" placeholder="Your Message *" aria-label="Your message" required></textarea>
                 </div>
                 <button type="submit" class="btn-primary btn-large">Submit Inquiry</button>
             </form>
@@ -274,13 +303,4 @@
     <script src="js/script.js"></script>
 </body>
 </html>
-                <div class="contact-form-box">
-                    <h2>Send Us a Message</h2>
-                    <form class="inquiry-form" id="contactForm">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Full Name *" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Email Address *" required>
-                        </div>
 

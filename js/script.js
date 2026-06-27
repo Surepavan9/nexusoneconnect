@@ -3,8 +3,17 @@ const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 
 if (navToggle) {
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
+    const toggleNav = () => {
+        const isOpen = navMenu.classList.toggle('active');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    };
+    navToggle.addEventListener('click', toggleNav);
+    // Keyboard support (Enter / Space) since nav-toggle is a role="button" div
+    navToggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleNav();
+        }
     });
 }
 
@@ -13,6 +22,9 @@ const navLinks = document.querySelectorAll('.nav-menu a');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
+        if (navToggle) {
+            navToggle.setAttribute('aria-expanded', 'false');
+        }
     });
 });
 
@@ -24,21 +36,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const ctaInquiryBtn = document.getElementById('ctaInquiryBtn');
     const closeModal = document.getElementById('closeModal');
 
-    console.log('Modal elements check:');
-    console.log('modal:', modal);
-    console.log('inquiryBtn:', inquiryBtn);
-    console.log('heroInquiryBtn:', heroInquiryBtn);
-    console.log('ctaInquiryBtn:', ctaInquiryBtn);
-
     // Open modal
     function openModal() {
-        console.log('openModal function called');
         if (modal) {
             modal.style.display = 'block';
             document.body.style.overflow = 'hidden';
-            console.log('Modal display set to block');
-        } else {
-            console.error('Modal element is null!');
         }
     }
 
@@ -52,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (inquiryBtn) {
         inquiryBtn.addEventListener('click', (e) => {
-            console.log('inquiryBtn clicked');
             e.preventDefault();
             e.stopPropagation();
             openModal();
@@ -61,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (heroInquiryBtn) {
         heroInquiryBtn.addEventListener('click', (e) => {
-            console.log('heroInquiryBtn clicked');
             e.preventDefault();
             e.stopPropagation();
             openModal();
@@ -70,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (ctaInquiryBtn) {
         ctaInquiryBtn.addEventListener('click', (e) => {
-            console.log('ctaInquiryBtn clicked');
             e.preventDefault();
             e.stopPropagation();
             openModal();
@@ -79,11 +78,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (closeModal) {
         closeModal.addEventListener('click', closeModalFunc);
+        // Keyboard support since close button is a role="button" span
+        closeModal.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                closeModalFunc();
+            }
+        });
     }
 
     // Close modal when clicking outside
     window.addEventListener('click', (e) => {
         if (e.target === modal) {
+            closeModalFunc();
+        }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal && modal.style.display === 'block') {
             closeModalFunc();
         }
     });
@@ -122,7 +135,11 @@ if (inquiryForm) {
 
                 // Reset form and close modal
                 inquiryForm.reset();
-                closeModalFunc();
+                const modal = document.getElementById('inquiryModal');
+                if (modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
             } else {
                 alert('There was an error submitting your form. Please try again or contact us directly.');
             }

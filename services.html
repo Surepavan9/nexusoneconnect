@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Our comprehensive IT asset and identity management services">
     <title>Services - Nexusone Connect</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="theme-color" content="#14B8A6">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Nexusone Connect">
+    <meta property="og:title" content="Services - Nexusone Connect">
+    <meta property="og:description" content="Comprehensive IT asset and identity management services: onboarding, offboarding, device management, warehousing, secure data wiping, and audit logs.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Services - Nexusone Connect">
+    <meta name="twitter:description" content="Comprehensive IT asset and identity management services.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -76,7 +85,7 @@
                 <div class="logo">
                     <a href="index.html">Nexusone Connect</a>
                 </div>
-                <div class="nav-toggle" id="navToggle">
+                <div class="nav-toggle" id="navToggle" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -110,9 +119,15 @@
                 </div>
                 <div class="service-text scroll-reveal-right">
                     <h2>Onboarding</h2>
-                    <p>We provide a secure and streamlined onboarding process that prepares employee identities, system access, and devices from day one. New hires receive instant access to the tools they need through a single secure login, enabling them to start work without delays.</p>
-                    <p>Our platform automatically assigns the right applications, permissions, and device configurations based on each employee's role while protecting access with multi-factor authentication and identity management controls.</p>
-                    <p>This efficient workflow strengthens security, reduces IT workload, and ensures smooth onboarding experience for every new employee.</p>
+                    <p>Secure and streamlined onboarding process that prepares employee identities, system access, and devices from day one. New hires receive instant access to the tools they need through a single secure login, enabling them to start work without delays.</p>
+                    <p>The platform automatically assigns the right applications, permissions, and device configurations based on each employee's role while protecting access with multi-factor authentication and identity management controls.</p>
+                    <p>This efficient workflow strengthens security, reduces IT workload, and ensures a smooth onboarding experience for every new employee.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-id-badge"></i> <strong>Role-based provisioning</strong> of apps, permissions, and devices on day one.</li>
+                        <li><i class="fas fa-key"></i> <strong>Single secure login</strong> with multi-factor authentication built in.</li>
+                        <li><i class="fas fa-bolt"></i> <strong>Instant access</strong> to the tools each new hire needs from the start.</li>
+                        <li><i class="fas fa-user-shield"></i> <strong>Identity controls</strong> that protect access without slowing people down.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -121,15 +136,21 @@
     <!-- Offboarding Service -->
     <section class="service-detail" id="offboarding">
         <div class="container">
-            <div class="service-content">
+            <div class="service-content scroll-reveal">
                 <div class="service-icon-large">
                     <i class="fas fa-user-minus"></i>
                 </div>
                 <div class="service-text">
                     <h2>Offboarding</h2>
-                    <p>We manage employee offboarding through a secure and structured process that immediately disables all system access on the employee's final working day. All user accounts, applications, and permissions are promptly revoked to protect company data and prevent unauthorized access.</p>
+                    <p>Secure and structured employee offboarding process that immediately disables all system access on the employee's final working day. All user accounts, applications, and permissions are promptly revoked to protect company data and prevent unauthorized access.</p>
                     <p>Company devices are securely collected, recorded, and tracked through a controlled asset management process. Each device then undergoes a data wiping procedure before being redeployed or reassigned.</p>
                     <p>This streamlined workflow protects sensitive information, maintains operational transparency, and ensures a secure transition for both HR and IT teams.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-ban"></i> <strong>Instant access revocation</strong> across all accounts and applications.</li>
+                        <li><i class="fas fa-box-archive"></i> <strong>Device recovery</strong> tracked through a controlled asset process.</li>
+                        <li><i class="fas fa-eraser"></i> <strong>Secure data wiping</strong> before redeployment or reassignment.</li>
+                        <li><i class="fas fa-clipboard-list"></i> <strong>Full audit trail</strong> for transparent HR and IT handover.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -138,14 +159,21 @@
     <!-- Device Management Service -->
     <section class="service-detail" id="device-management">
         <div class="container">
-            <div class="service-content">
+            <div class="service-content scroll-reveal">
                 <div class="service-icon-large">
                     <i class="fas fa-laptop"></i>
                 </div>
                 <div class="service-text">
                     <h2>Device Management</h2>
-                    <p>We provide comprehensive device management to ensure all company devices are securely configured, tracked, and maintained throughout their lifecycle.</p>
-                    <p>Each device is properly registered, assigned to employees, and monitored through a centralized management system.</p>
+                    <p>Comprehensive device management ensuring all company devices are securely configured, tracked, and maintained throughout their entire lifecycle.</p>
+                    <p>Each device is registered, assigned to an employee, and monitored through a centralized management system, giving IT teams a single source of truth for every laptop, phone, and peripheral in the fleet.</p>
+                    <p>Policy-based controls keep operating systems, security patches, and applications up to date automatically, while remote actions allow lost or compromised devices to be locked or wiped within minutes.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-cogs"></i> <strong>Zero-touch enrollment</strong> and automated configuration by employee role.</li>
+                        <li><i class="fas fa-shield-halved"></i> <strong>Policy enforcement</strong> for encryption, screen locks, and security baselines.</li>
+                        <li><i class="fas fa-arrows-rotate"></i> <strong>Automated patching</strong> of OS and application updates across the fleet.</li>
+                        <li><i class="fas fa-location-crosshairs"></i> <strong>Remote lock &amp; wipe</strong> for lost, stolen, or compromised devices.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -154,15 +182,21 @@
     <!-- Warehouse Management Service -->
     <section class="service-detail" id="warehouse">
         <div class="container">
-            <div class="service-content">
+            <div class="service-content scroll-reveal">
                 <div class="service-icon-large">
                     <i class="fas fa-warehouse"></i>
                 </div>
                 <div class="service-text">
                     <h2>Warehouse & Inventory Management</h2>
-                    <p>We provide secure warehouse and inventory management to ensure company devices are properly stored, tracked, and maintained within a controlled environment.</p>
-                    <p>Each device is logged, labeled, and inspected for condition and quality before being stored, redeployed, or shipped. Our centralized inventory system provides clear visibility into asset location, availability, and status always.</p>
+                    <p>Secure warehouse and inventory management ensuring company devices are properly stored, tracked, and maintained within a controlled environment.</p>
+                    <p>Each device is logged, labeled, and inspected for condition and quality before being stored, redeployed, or shipped. The centralized inventory system provides clear visibility into asset location, availability, and status at all times.</p>
                     <p>This structured process ensures secure storage, organized asset tracking, and efficient access to inventory when devices are required.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-barcode"></i> <strong>Labeled &amp; logged intake</strong> with condition and quality checks.</li>
+                        <li><i class="fas fa-boxes-stacked"></i> <strong>Centralized inventory</strong> with real-time location and status.</li>
+                        <li><i class="fas fa-truck-fast"></i> <strong>Ready-to-deploy stock</strong> available the moment devices are needed.</li>
+                        <li><i class="fas fa-warehouse"></i> <strong>Controlled storage</strong> in a secure, organized environment.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -171,14 +205,21 @@
     <!-- Secure Data Wiping Service -->
     <section class="service-detail" id="data-wiping">
         <div class="container">
-            <div class="service-content">
+            <div class="service-content scroll-reveal">
                 <div class="service-icon-large">
                     <i class="fas fa-eraser"></i>
                 </div>
                 <div class="service-text">
                     <h2>Secure Data Wiping</h2>
-                    <p>We provide advanced secure data wiping services to ensure all sensitive client data is permanently removed from company devices before reuse, redeployment, or disposal.</p>
-                    <p>Our process follows certified industry data erasure standards to eliminate any possibility of data recovery. Each device undergoes a controlled wiping procedure with verification and detailed reporting to confirm complete data removal.</p>
+                    <p>Advanced secure data wiping services ensuring all sensitive client data is permanently removed from company devices before reuse, redeployment, or disposal.</p>
+                    <p>The process follows certified industry data erasure standards to eliminate any possibility of data recovery. Each device undergoes a controlled wiping procedure with verification and detailed reporting to confirm complete data removal.</p>
+                    <p>Every wipe generates a tamper-proof certificate of erasure, providing the documented evidence needed for compliance audits, chain-of-custody records, and data protection regulations such as GDPR and HIPAA.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-certificate"></i> <strong>Certified erasure</strong> aligned with NIST 800-88 and industry standards.</li>
+                        <li><i class="fas fa-file-shield"></i> <strong>Certificate of destruction</strong> issued for every device wiped.</li>
+                        <li><i class="fas fa-recycle"></i> <strong>Safe redeployment</strong> of cleared devices back into the asset pool.</li>
+                        <li><i class="fas fa-clipboard-check"></i> <strong>Compliance ready</strong> for GDPR, HIPAA, and internal audits.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -187,14 +228,21 @@
     <!-- Audit Logs Service -->
     <section class="service-detail" id="audit-logs">
         <div class="container">
-            <div class="service-content">
+            <div class="service-content scroll-reveal">
                 <div class="service-icon-large">
                     <i class="fas fa-clipboard-list"></i>
                 </div>
                 <div class="service-text">
                     <h2>Audit Logs</h2>
-                    <p>We maintain comprehensive audit logs to record and monitor all system activities, user access, and administrative actions across the platform.</p>
+                    <p>Comprehensive audit logs recording and monitoring all system activities, user access, and administrative actions across the platform.</p>
                     <p>Every login, access change, device activity, and system update is securely tracked to ensure full visibility and accountability.</p>
+                    <p>Logs are time-stamped, immutable, and fully searchable, so IT and security teams can reconstruct exactly who did what and when — turning a stressful audit into a simple export.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-fingerprint"></i> <strong>Full traceability</strong> of every login, approval, and access change.</li>
+                        <li><i class="fas fa-lock"></i> <strong>Immutable records</strong> that cannot be altered or deleted after the fact.</li>
+                        <li><i class="fas fa-magnifying-glass"></i> <strong>Fast search &amp; filtering</strong> across users, devices, and date ranges.</li>
+                        <li><i class="fas fa-file-export"></i> <strong>One-click export</strong> for audits, reviews, and compliance reporting.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -242,6 +290,8 @@
                         <li><a href="services.html#offboarding">Offboarding</a></li>
                         <li><a href="services.html#device-management">Device Management</a></li>
                         <li><a href="services.html#warehouse">Warehouse Management</a></li>
+                        <li><a href="services.html#data-wiping">Secure Data Wiping</a></li>
+                        <li><a href="services.html#audit-logs">Audit Logs</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -254,46 +304,47 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Nexusone Connect. All rights reserved.</p>
+                <p>&copy; 2026 Nexusone Connect. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Inquiry Popup Modal -->
-    <div class="modal" id="inquiryModal">
+    <div class="modal" id="inquiryModal" role="dialog" aria-modal="true" aria-labelledby="inquiryModalTitle">
         <div class="modal-content">
-            <span class="close-modal" id="closeModal">&times;</span>
-            <h2>Get Started Today</h2>
+            <span class="close-modal" id="closeModal" role="button" tabindex="0" aria-label="Close dialog">&times;</span>
+            <h2 id="inquiryModalTitle">Get Started Today</h2>
             <p>Fill out the form below and our team will get back to you within 24 hours.</p>
             <form class="inquiry-form" id="inquiryForm">
                 <div class="form-group">
-                    <input type="text" name="name" placeholder="Full Name *" required>
+                    <input type="text" name="name" placeholder="Full Name *" aria-label="Full name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" placeholder="Email Address *" required>
+                    <input type="email" name="email" placeholder="Email Address *" aria-label="Email address" required>
                 </div>
                 <div class="form-group">
-                    <input type="tel" name="phone" placeholder="Phone Number">
+                    <input type="tel" name="phone" placeholder="Phone Number" aria-label="Phone number">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="company" placeholder="Company Name">
+                    <input type="text" name="company" placeholder="Company Name" aria-label="Company name">
                 </div>
                 <div class="form-group">
-                    <input type="url" name="website" placeholder="Your Website URL (Optional)">
+                    <input type="url" name="website" placeholder="Your Website URL (Optional)" aria-label="Website URL">
                 </div>
                 <div class="form-group">
-                    <select name="service" required>
+                    <select name="service" required aria-label="Service of interest">
                         <option value="">Select Service *</option>
-                        <option value="Web Development & Design">Web Development & Design</option>
-                        <option value="Digital Marketing (SEO/PPC)">Digital Marketing (SEO/PPC)</option>
-                        <option value="Cloud Solutions & Infrastructure">Cloud Solutions & Infrastructure</option>
-                        <option value="Data Analytics & Reporting">Data Analytics & Reporting</option>
-                        <option value="IT Support & Consulting">IT Support & Consulting</option>
+                        <option value="Onboarding">Onboarding</option>
+                        <option value="Offboarding">Offboarding</option>
+                        <option value="Device Management">Device Management</option>
+                        <option value="Warehouse &amp; Inventory Management">Warehouse &amp; Inventory Management</option>
+                        <option value="Secure Data Wiping">Secure Data Wiping</option>
+                        <option value="Audit Logs">Audit Logs</option>
                         <option value="General Inquiry">General Inquiry</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <textarea name="message" rows="4" placeholder="Your Message *" required></textarea>
+                    <textarea name="message" rows="4" placeholder="Your Message *" aria-label="Your message" required></textarea>
                 </div>
                 <button type="submit" class="btn-primary btn-large">Submit Inquiry</button>
             </form>
